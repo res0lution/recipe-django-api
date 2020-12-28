@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser, \
     BaseUserManager, PermissionsMixin
 from django.conf import settings
 
+
 # Create your models here.
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
@@ -36,6 +37,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
+
 
 class Tag(models.Model):
     """Tag to be used for a recipe"""
